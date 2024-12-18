@@ -1,24 +1,47 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import Dashboard from './components/Dashboard';
+import DwhInterface from './components/DwhInterface';
+import UserManagement from './components/UserManagement';
+import ETLStatus from './components/ETLStatus';
+import DataFetchingComponent from './components/DataFetchingComponent';
+import Login from './components/Login';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route 
+            path="/*" 
+            element={
+              <>
+                <header className="App-header">
+                <h4 className="header-title">Data Warehouse Monitoring System</h4>
+                <NavBar />
+                  
+                </header>
+                <div className="content">
+                  <Routes>
+                    <Route path="/" element={<Dashboard />} />
+                    <Route path="/data-warehouse" element={<DwhInterface />} />
+                    <Route path="/user-management" element={<UserManagement />} />
+                    <Route path="/etl-status" element={<ETLStatus />} />
+                    <Route path="/reports" element={<DataFetchingComponent />} />
+                  </Routes>
+                </div>
+                <footer className="footer">
+                  <p>&copy; 2024 Data Warehouse Monitoring System</p>
+                </footer>
+              </>
+            }
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

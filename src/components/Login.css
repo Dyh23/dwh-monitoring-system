@@ -1,0 +1,113 @@
+/* src/components/Login.css */
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('C:/xampp/htdocs/dwh_monitoring_system/public/dwh.jpg') no-repeat center center;
+  background-size: cover;
+  opacity: 0.85; /* Make background image a bit transparent */
+}
+
+.login-page {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.left-section {
+  flex: 6;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.system-title {
+  font-size: 5vw; /* Reduced font size */
+  color: white;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  margin-right: 100px; /* Move text a bit to the right */
+}
+
+.right-section {
+  flex: 4;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.login-container {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin-left: 20px; /* Move container a bit to the left */
+}
+
+.login-form {
+  text-align: center;
+}
+
+.login-logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #248eff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.login-links {
+  margin-top: 10px;
+}
+
+.login-links a {
+  display: block;
+  margin-bottom: 5px;
+  color: #248eff;
+  text-decoration: none;
+}
+
+.login-links a:hover {
+  text-decoration: underline;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}

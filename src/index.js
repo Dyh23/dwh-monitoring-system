@@ -1,8 +1,24 @@
+import './polyfills';
+import 'os-browserify/browser';
+import 'path-browserify';
+import 'vm-browserify';
+import 'assert';
+import 'stream-browserify';
+import 'querystring-es3';
+import 'buffer';
+import 'crypto-browserify';
+import 'stream-http';
+import 'https-browserify';
+import 'browserify-zlib';
+import 'url';
+import 'util';
+import 'process/browser';
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+require('dotenv').config();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -10,8 +26,3 @@ root.render(
     <App />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
