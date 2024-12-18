@@ -11,8 +11,16 @@ require('./config/auth');
 const app = express();
 const port = 5000;
 
+const sessionSecret = process.env.SESSION_SECRET;
+app.use(session({
+  secret: sessionSecret,
+  resave: false,
+  saveUninitialized: true
+}));
+
+
 app.use(cors()); // Use the cors middleware
-app.use(session({ secret: 'REMOVED_SECRET2', resave: false, saveUninitialized: true }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
