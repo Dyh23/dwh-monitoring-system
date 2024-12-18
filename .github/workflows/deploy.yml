@@ -18,6 +18,17 @@ jobs:
     - name: Install dependencies
       run: yarn install
 
+    - name: Check Secrets
+      run: echo "Checking secrets..."
+      env:
+        REACT_APP_AZURE_CLIENT_SECRET: ${{ secrets.REACT_APP_AZURE_CLIENT_SECRET }}
+        SESSION_SECRET: ${{ secrets.SESSION_SECRET }}
+
+    - name: Validate Secrets (temporary)
+      run: |
+        if [ -z "${REACT_APP_AZURE_CLIENT_SECRET}" ]; then echo "REACT_APP_AZURE_CLIENT_SECRET is not set"; else echo "REACT_APP_AZURE_CLIENT_SECRET is set"; fi
+        if [ -z "${SESSION_SECRET}" ]; then echo "SESSION_SECRET is not set"; else echo "SESSION_SECRET is set"; fi
+
     - name: Build project
       env:
         REACT_APP_AZURE_CLIENT_SECRET: ${{ secrets.REACT_APP_AZURE_CLIENT_SECRET }}
