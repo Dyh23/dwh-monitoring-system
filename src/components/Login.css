@@ -27,7 +27,7 @@ body {
 .system-title {
   font-size: 5vw; /* Reduced font size */
   color: white;
-  font-weight: bold;
+  
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   margin-right: 100px; /* Move text a bit to the right */
